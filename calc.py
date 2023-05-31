@@ -25,9 +25,7 @@ def calculator():
 
     choice = input("Enter your choice (1-4): ")
 
-    if choice not in ['1', '2', '3', '4']:
-        print("Invalid choice. Please try again.")
-        return
+   
 
     num1 = float(input("Enter the first number: "))
     num2 = float(input("Enter the second number: "))
@@ -45,5 +43,7 @@ def calculator():
         result = divide(num1, num2)
         if result is not None:
             print("Result:", result)
+    else:
+        print("Invalid choice. Please try again.")
 
 calculator()
