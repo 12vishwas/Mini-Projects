@@ -24,19 +24,24 @@ def delete_contact():
 def display_contacts():
     print('contacts: ')
     if contacts:
-        for name,number in contacts:
-            print(f'name: {name},number:{number}')
+        for name in contacts:
+            print(f'name: {name},number:{contacts[name]}')
     else:
         print('No contacts found')
 
+def exit():
+    quit()
 
-def main():
+def ask_choice():
+
+
     print("\n***** Contact Book *****")
     print("1. Add Contact")
     print("2. Search Contact")
     print("3. Delete Contact")
     print("4. Display Contacts")
-    choice = input("Enter your choice (1-4): ")
+    print("5.You exit ")
+    choice = input("Enter your choice (1-5): ")
 
     if choice == '1':
             add_contact()
@@ -46,8 +51,15 @@ def main():
         delete_contact()
     elif choice == '4':
         display_contacts()
+    elif choice =='5':
+        exit()
+
     else:
         print('Invalid choice')
+
+def main():
+    while True:
+        ask_choice()
 
 if __name__ == '__main__':
     main()
